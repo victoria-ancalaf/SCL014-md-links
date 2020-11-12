@@ -1,21 +1,15 @@
-const readingFile = require('./readFile');
+const readingFile = require("./readFile");
 const path = require("path");
 
 const absolutePath = (ruta) => {
-  path.isAbsolute(ruta);
-  console.log(path.isAbsolute(ruta));
-  if (ruta === true){
+  const pathIsAbsolute = path.isAbsolute(ruta);
+  if (pathIsAbsolute === true) {
     readingFile(ruta);
   } else {
-    path.resolve(ruta);
-    console.log(path.resolve(ruta));
-    path.normalize(ruta);
+    const resolvePath = path.resolve(ruta);
+    const normalizedPath = path.normalize(resolvePath);
+    readingFile(normalizedPath);
   }
-
-  // if (fs.existsSync('/etc/passwd')) {
-  //   console.log('The path exists.');
-  // }
 };
-
 
 module.exports = absolutePath;

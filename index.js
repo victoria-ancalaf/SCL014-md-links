@@ -1,9 +1,5 @@
-const absolutePath = require('./absolutePath');
-const readFile = require('./readFile');
+const absolutePath = require("./absolutePath");
 
 const file = process.argv[2];
 
-
-// absolutePath.absolutePath(file);
-
-readFile(file);
+absolutePath(file);
