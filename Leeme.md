@@ -1,0 +1,7 @@
+* [Leer un directorio](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)
+* [Path](https://nodejs.org/api/path.html)
+* [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
+* [ ] Verbos HTTP ([http.get](https://nodejs.org/api/http.html#http_http_get_options_callback))
+* [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
+* [ ] [Testeo asíncrono.](https://jestjs.io/docs/es-ES/asynchronous)
+* [ ] [Uso de librerias de Mock.](https://jestjs.io/docs/es-ES/manual-mocks)
