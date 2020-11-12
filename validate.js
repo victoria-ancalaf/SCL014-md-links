@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const chalk = require("chalk");
 
 module.exports = (arrLinks) => {
   const validateLinks = arrLinks.map((element) => {
@@ -30,10 +31,16 @@ module.exports = (arrLinks) => {
     resp.forEach((element) => {
       if (validateOption === "--validate") {
         console.log(
-          `${element.File} ${element.Link} ${element.Status_Text} ${element.Status_Code}`
+          `${chalk.blackBright(element.File)} ${chalk.magentaBright(
+            element.Link
+          )} ${chalk.greenBright(element.Status_Text)} ${chalk.cyanBright(
+            element.Status_Code
+          )}`
         );
       } else {
-        console.log(`${element.File} ${element.Link}`);
+        console.log(
+          `${chalk.blackBright(element.File)} ${chalk.magentaBright(element.Link)}`
+        );
       }
     });
   });
