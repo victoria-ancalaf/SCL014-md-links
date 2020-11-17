@@ -1,5 +1,5 @@
-const absolutePath = require("./absolutePath");
+const readingRoute = require("./md-links");
 
 const file = process.argv[2];
 
-absolutePath(file);
+readingRoute(file);

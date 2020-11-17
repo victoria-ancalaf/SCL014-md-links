@@ -3,5 +3,5 @@
 * [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
 * [ ] Verbos HTTP ([http.get](https://nodejs.org/api/http.html#http_http_get_options_callback))
 * [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
-* [ ] [Testeo asíncrono.](https://jestjs.io/docs/es-ES/asynchronous)
+* [ ] [Testeo asíncrono.](https://jestjs.io/docs/es-ES/asynchous)
 * [ ] [Uso de librerias de Mock.](https://jestjs.io/docs/es-ES/manual-mocks)

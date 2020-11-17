@@ -1,14 +1,14 @@
-const readingFile = require("./readFile");
+const readMd = require("./readFile");
 const path = require("path");
 
 const absolutePath = (ruta) => {
   const pathIsAbsolute = path.isAbsolute(ruta);
   if (pathIsAbsolute === true) {
-    readingFile(ruta);
+    readMd(ruta);
   } else {
     const resolvePath = path.resolve(ruta);
     const normalizedPath = path.normalize(resolvePath);
-    readingFile(normalizedPath);
+    readMd(normalizedPath);
   }
 };
 

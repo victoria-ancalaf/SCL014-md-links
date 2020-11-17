@@ -3,21 +3,22 @@ const chalk = require("chalk");
 
 module.exports = (arrLinks) => {
   const validateLinks = arrLinks.map((element) => {
-    return fetch(element.Link)
+    return fetch(element.link)
       .then((res) => {
         return {
-          File: element.File,
-          Link: res.url,
-          Status_Code: res.status,
-          Status_Text: res.statusText,
+          file: element.file,
+          text: element.text,
+          link: res.url,
+          status_code: res.status,
+          status_text: res.statusText,
         };
       })
       .catch((error) => {
         return {
-          File: element.File,
-          Link: element.Link,
-          Status_Code: error.code,
-          Status_Text: error.errno,
+          file: element.file,
+          link: element.link,
+          status_code: error.code,
+          status_text: error.errno,
         };
       });
   });
@@ -31,15 +32,15 @@ module.exports = (arrLinks) => {
     resp.forEach((element) => {
       if (validateOption === "--validate") {
         console.log(
-          `${chalk.blackBright(element.File)} ${chalk.magentaBright(
-            element.Link
-          )} ${chalk.greenBright(element.Status_Text)} ${chalk.cyanBright(
-            element.Status_Code
-          )}`
+          `${chalk.blackBright(element.file)} ${chalk.magentaBright(
+            element.link
+          )} ${chalk.greenBright(element.status_text)} ${chalk.cyanBright(
+            element.status_code
+          )} ${chalk.blackBright(element.text)}`
         );
       } else {
         console.log(
-          `${chalk.blackBright(element.File)} ${chalk.magentaBright(element.Link)}`
+          `${chalk.blackBright(element.file)} ${chalk.magentaBright(element.link)}`
         );
       }
     });
