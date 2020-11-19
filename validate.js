@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const { stats, brokenLinks } = require("./stats");
 const chalk = require("chalk");
 
 module.exports = (arrLinks) => {
@@ -24,13 +25,34 @@ module.exports = (arrLinks) => {
   });
 
   Promise.all(validateLinks).then((resp) => {
-    let validateOption = "";
-    if (process.argv.length > 3) {
-      validateOption = process.argv[3];
+    let processArgv = {
+      validate: false,
+      stats: false,
+    };
+
+    if (process.argv.length > 2) {
+      process.argv.forEach((element) => {
+        if (element === "--validate") {
+          processArgv.validate = true;
+        }
+        if (element === "--stats") {
+          processArgv.stats = true;
+        }
+      });
+    }
+
+    if (processArgv.stats === true  && processArgv.validate === false) {
+      const getStats = stats(resp);
+      console.log(getStats);
+    }
+
+    if (processArgv.validate === true && processArgv.stats === true) {
+      const getBroken = brokenLinks(resp);
+      console.log(getBroken);
     }
 
     resp.forEach((element) => {
-      if (validateOption === "--validate") {
+      if (processArgv.validate) {
         console.log(
           `${chalk.blackBright(element.file)} ${chalk.magentaBright(
             element.link
@@ -40,7 +62,9 @@ module.exports = (arrLinks) => {
         );
       } else {
         console.log(
-          `${chalk.blackBright(element.file)} ${chalk.magentaBright(element.link)}`
+          `${chalk.blackBright(element.file)} ${chalk.magentaBright(
+            element.link
+          )}`
         );
       }
     });
