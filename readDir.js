@@ -11,7 +11,6 @@ const readDirectory = () => {
       filterMd.forEach((archivo) => {
         absolutePath(archivo);
       });
-      console.log(files);
     }
   });
 };

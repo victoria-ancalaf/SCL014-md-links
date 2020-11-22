@@ -3,7 +3,7 @@ module.exports = {
     let statsLinks = element.map((list) => list.link);
     const uniqueLinks = new Set(statsLinks);
     const uniques = Array.from(new Set(uniqueLinks));
-    console.log("*****Stats*****");
+    console.log("=====Stats=====");
 
     return {
       Total: element.length,
