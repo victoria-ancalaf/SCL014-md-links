@@ -1,9 +1,5 @@
 # Markdown Links
 
-***
-
-## 1. Preámbulo
-
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...), y es muy común
@@ -25,47 +21,38 @@ algunas estadísticas.
 
 #### Instalación
 
-```Instalación
-```
+`npm i md-links-vancalaf`
 
 ### CLI (Command Line Interface - Interfaz de Línea de Comando)
 
-El ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente
-manera a través de la terminal:
+La librería se ejecuta de la siguiente manera, desde la terminal:
 
 `md-links <path-to-file> [options]`
 
 Por ejemplo:
 
-```sh
-$ md-links ./some/example.md
-./some/example.md http://algo.com/2/3/ Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html algún doc
-./some/example.md http://google.com/ Google
-```
 
-El comportamiento por defecto no debe validar si las URLs responden ok o no,
-solo debe identificar el archivo markdown (a partir de la ruta que recibe como
-argumento), analizar el archivo Markdown e imprimir los links que vaya
-encontrando, junto con la ruta del archivo donde aparece y el texto
-que hay dentro del link (truncado a 50 caracteres).
+(Si es solo un archivo .md)
+
+`$ md-links README.md`
+
+
+(Si quieres leer todos los archivos .md dentro de una carpeta)
+
+`$ md-links ./`
+
+
 
 #### Options
 
 ##### `--validate`
 
-Si pasamos la opción `--validate`, el módulo debe hacer una petición HTTP para
-averiguar si el link funciona o no. Si el link resulta en una redirección a una
-URL que responde ok, entonces consideraremos el link como ok.
+La opción `--validate` imprime si el link funciona o no. Si el link resulta en una redirección a una
+URL que responde: OK, entonces consideraremos el link como válido.
 
 Por ejemplo:
 
-```sh
-$ md-links ./some/example.md --validate
-./some/example.md http://algo.com/2/3/ ok 200 Link a algo
-./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc
-./some/example.md http://google.com/ ok 301 Google
-```
+`$ md-links README.md --validate`
 
 
 
@@ -74,20 +61,15 @@ $ md-links ./some/example.md --validate
 Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
 básicas sobre los links.
 
-```sh
-$ md-links ./some/example.md --stats
-Total: 3
-Unique: 3
-```
+`$ md-links README.md --stats`
 
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
 
-```sh
-$ md-links ./some/example.md --stats --validate
-Total: 3
-Unique: 3
-Broken: 1
-```
+`$ md-links README.md --validate --stats`
 
 ***
+### Dependencies
+
+[node-fetch](https://www.npmjs.com/package/node-fetch)
+[chalk](https://www.npmjs.com/package/chalk)
