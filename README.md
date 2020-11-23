@@ -42,9 +42,9 @@ Por ejemplo:
 
 `$ md-links ./`
 
+![leer-carpeta](https://github.com/victoria-ancalaf/SCL014-md-links/blob/master/img/leer-carpeta.PNG)
 
-
-#### Options
+### Options
 
 ##### `--validate`
 
@@ -55,7 +55,7 @@ Por ejemplo:
 
 `$ md-links README.md --validate`
 
-
+![validate](https://github.com/victoria-ancalaf/SCL014-md-links/blob/master/img/validate.PNG)
 
 ##### `--stats`
 
@@ -64,10 +64,14 @@ básicas sobre los links.
 
 `$ md-links README.md --stats`
 
+![stats](https://github.com/victoria-ancalaf/SCL014-md-links/blob/master/img/stats.PNG)
+
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
 
 `$ md-links README.md --validate --stats`
+
+![validate-stats](https://github.com/victoria-ancalaf/SCL014-md-links/blob/master/img/validate-stats.PNG)
 
 ***
 ### Dependencies
