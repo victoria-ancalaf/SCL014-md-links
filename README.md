@@ -19,7 +19,7 @@ algunas estadísticas.
 ***
 
 
-#### Instalación
+### Instalación
 
 `npm i md-links-vancalaf`
 
@@ -36,6 +36,7 @@ Por ejemplo:
 
 `$ md-links README.md`
 
+![solo-archivo](https://github.com/victoria-ancalaf/SCL014-md-links/blob/master/img/solo-archivo.PNG)
 
 (Si quieres leer todos los archivos .md dentro de una carpeta)
 
